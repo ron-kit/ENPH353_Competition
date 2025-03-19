@@ -97,6 +97,13 @@
 /home/fizzer/ros_ws/build/2024_competition/enph353/enph353_utils/CMakeFiles/enph353_utils_generate_messages_py.dir
 /home/fizzer/ros_ws/build/2024_competition/enph353/enph353_utils/CMakeFiles/edit_cache.dir
 /home/fizzer/ros_ws/build/2024_competition/enph353/enph353_utils/CMakeFiles/rebuild_cache.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/install/strip.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/install/local.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/install.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/list_install_components.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/rebuild_cache.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/edit_cache.dir
+/home/fizzer/ros_ws/build/my_controller/CMakeFiles/test.dir
 /home/fizzer/ros_ws/build/2024_competition/adeept_awr/adeept_awr_gazebo/CMakeFiles/install/strip.dir
 /home/fizzer/ros_ws/build/2024_competition/adeept_awr/adeept_awr_gazebo/CMakeFiles/install/local.dir
 /home/fizzer/ros_ws/build/2024_competition/adeept_awr/adeept_awr_gazebo/CMakeFiles/list_install_components.dir
