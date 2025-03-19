@@ -136,7 +136,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/fizzer/ros_ws/build/2024_competition/enph353/enph353_npcs/cmake_install.cmake")
   include("/home/fizzer/ros_ws/build/2024_competition/robbie/cmake_install.cmake")
   include("/home/fizzer/ros_ws/build/2024_competition/enph353/enph353_utils/cmake_install.cmake")
-  include("/home/fizzer/ros_ws/build/my_controller/cmake_install.cmake")
   include("/home/fizzer/ros_ws/build/2024_competition/adeept_awr/adeept_awr_gazebo/cmake_install.cmake")
   include("/home/fizzer/ros_ws/build/2024_competition/enph353/enph353_gazebo/cmake_install.cmake")
 
