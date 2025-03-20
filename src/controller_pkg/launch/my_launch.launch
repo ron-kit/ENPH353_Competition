@@ -1,0 +1,8 @@
+<launch>
+    <!-- Launch movement -->
+    <node pkg="controller_pkg"
+          type="follow_line.py"
+          name="move_robot"
+          output="screen">
+    </node>
+</launch>
