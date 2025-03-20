@@ -5,4 +5,9 @@
           name="move_robot"
           output="screen">
     </node>
+    <node pkg="controller_pkg"
+          type="timer.py"
+          name="timer"
+          output="screen">
+    </node>
 </launch>
