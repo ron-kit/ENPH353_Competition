@@ -23,7 +23,9 @@ def loadCrimesProfileCompetition():
                  weapon:value,bandit:value]
     '''
 
-    # load fix
+    # <plate fix>
+    # after an hour of headache my solution is
+    # to change the file name HERE | when you want custom clues
     local_csv_path = SCRIPT_PATH + "custom_plates.csv"
         
     if os.path.exists(local_csv_path):
@@ -37,7 +39,7 @@ def loadCrimesProfileCompetition():
         return clues
 
     print("Local file not found. Downloading clues from remote source...")
-    # load fix
+    # </plate fix>
 
     URL = "https://phas.ubc.ca/~miti/ENPH353/ENPH353Clues.csv"
 
@@ -52,10 +54,7 @@ def loadCrimesProfileCompetition():
 
     # We will save the clues to plates.csv
     # TODO Rename plates.csv to clues.csv
-
-    # RON - after an hour of headache my solution is
-    # to change the file path |     HERE     | when you want new clues
-    with open(SCRIPT_PATH + "custom_plates.csv", 'w') as plates_file:
+    with open(SCRIPT_PATH + "plates.csv", 'w') as plates_file:
         csvwriter = csv.writer(plates_file)
 
         for (key, value) in zip(key_list, value_list):
