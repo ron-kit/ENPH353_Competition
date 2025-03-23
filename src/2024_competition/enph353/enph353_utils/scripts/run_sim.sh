@@ -37,7 +37,7 @@ echo -e "\n################################################################\n"
 #sleep 5s
 
 # generate new plates if necessary
-if $generate_plates = 'true'
+if [ "$generate_plates" = "true" ]
 then
   echo "Generating new plates."
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -47,7 +47,7 @@ then
 fi
 
 # display plates with or without QR code
-if $label_plates = 'true'
+if [ "$label_plates" = "true" ]
 then
   ln -sfn labelled ../../enph353_gazebo/media/materials/textures/license_plates
 else
