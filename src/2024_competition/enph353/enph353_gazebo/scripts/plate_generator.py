@@ -22,6 +22,23 @@ def loadCrimesProfileCompetition():
                  place:value,motive:value,
                  weapon:value,bandit:value]
     '''
+
+    # load fix
+    local_csv_path = SCRIPT_PATH + "custom_plates.csv"
+        
+    if os.path.exists(local_csv_path):
+        print("Loading clues from local file...")
+        clues = {}
+        with open(local_csv_path, 'r') as plates_file:
+            reader = csv.reader(plates_file)
+            for row in reader:
+                if len(row) >= 2:
+                    clues[row[0]] = row[1]
+        return clues
+
+    print("Local file not found. Downloading clues from remote source...")
+    # load fix
+
     URL = "https://phas.ubc.ca/~miti/ENPH353/ENPH353Clues.csv"
 
     print("Loading clues ...")
@@ -35,7 +52,10 @@ def loadCrimesProfileCompetition():
 
     # We will save the clues to plates.csv
     # TODO Rename plates.csv to clues.csv
-    with open(SCRIPT_PATH + "plates.csv", 'w') as plates_file:
+
+    # RON - after an hour of headache my solution is
+    # to change the file path |     HERE     | when you want new clues
+    with open(SCRIPT_PATH + "custom_plates.csv", 'w') as plates_file:
         csvwriter = csv.writer(plates_file)
 
         for (key, value) in zip(key_list, value_list):

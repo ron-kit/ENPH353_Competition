@@ -37,17 +37,20 @@ echo -e "\n################################################################\n"
 #sleep 5s
 
 # generate new plates if necessary
-if [ "$generate_plates" = "true" ]
+if [[ "$generate_plates" = "true" ]]
 then
-  echo "Generating new plates."
-	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-	RELATIVE_PATH="/../../enph353_gazebo/scripts/plate_generator.py"
-	FULL_PATH=".$RELATIVE_PATH"
-	python3 $FULL_PATH
+	SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+	SCRIPT_PATH="$SCRIPT_DIR/../../enph353_gazebo/scripts"
+  echo "Generating new clues..."
+	python3 "$SCRIPT_PATH/clue_generator.py"
+  
+  echo "Generating new plates from new clues..."
+	python3 "$SCRIPT_PATH/plate_generator.py"
+  
 fi
 
 # display plates with or without QR code
-if [ "$label_plates" = "true" ]
+if [[ "$label_plates" = "true" ]]
 then
   ln -sfn labelled ../../enph353_gazebo/media/materials/textures/license_plates
 else
