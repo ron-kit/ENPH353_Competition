@@ -46,7 +46,8 @@ then
   
   echo "Generating new plates from new clues..."
 	python3 "$SCRIPT_PATH/plate_generator.py"
-  
+else
+  echo "Loading previous clues..."
 fi
 
 # display plates with or without QR code

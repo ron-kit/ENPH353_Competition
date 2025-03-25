@@ -22,25 +22,7 @@ def loadCrimesProfileCompetition():
                  place:value,motive:value,
                  weapon:value,bandit:value]
     '''
-
-    # <plate fix>
-    # after an hour of headache my solution is
-    # to change the file name HERE | when you want custom clues
-    local_csv_path = SCRIPT_PATH + "custom_plates.csv"
-        
-    if os.path.exists(local_csv_path):
-        print("Loading clues from local file...")
-        clues = {}
-        with open(local_csv_path, 'r') as plates_file:
-            reader = csv.reader(plates_file)
-            for row in reader:
-                if len(row) >= 2:
-                    clues[row[0]] = row[1]
-        return clues
-
-    print("Local file not found. Downloading clues from remote source...")
-    # </plate fix>
-
+    
     URL = "https://phas.ubc.ca/~miti/ENPH353/ENPH353Clues.csv"
 
     print("Loading clues ...")
@@ -65,6 +47,19 @@ def loadCrimesProfileCompetition():
 
     return clues
 
+def loadRandomClues():
+    script_path = os.path.dirname(os.path.realpath(__file__)) + "/"
+    clues = {}
+
+    # Read from clues.csv
+    with open(script_path + "clues.csv", 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            key, value = row
+            clues[key] = value
+
+    return clues
+
 # Find the path to this script
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__)) + "/"
 TEXTURE_PATH = '../media/materials/textures/'
@@ -74,7 +69,7 @@ PLATE_HEIGHT = 600
 PLATE_WIDTH = banner_canvas.shape[1]
 IMG_DEPTH = 3
 
-clues = loadCrimesProfileCompetition()
+clues = loadRandomClues()
 
 i = 0
 for key, value in clues.items():
